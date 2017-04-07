@@ -40,4 +40,12 @@ export class ProductListComponent implements OnInit {
     toggleImage(): void {
         this.showImage = !this.showImage;
     };
+
+    ngOnInit(): void {
+        console.log('In OnInit');
+    };
+
+    onRatingClicked(message: string): void {
+        this.pageTitle = 'Product List: ' + message;
+    };
 }
