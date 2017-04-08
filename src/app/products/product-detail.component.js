@@ -6,17 +6,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
-var WelcomeComponent = (function () {
-    function WelcomeComponent() {
-        this.pageTitle = 'Welcome';
+var ProductDetailComponent = (function () {
+    function ProductDetailComponent() {
+        this.pageTitle = 'Product Detail';
     }
-    return WelcomeComponent;
+    return ProductDetailComponent;
 }());
-WelcomeComponent = __decorate([
+ProductDetailComponent = __decorate([
     core_1.Component({
         moduleId: module.id,
-        templateUrl: 'welcome.component.html'
+        templateUrl: 'product-detail.component.html'
     })
-], WelcomeComponent);
-exports.WelcomeComponent = WelcomeComponent;
-//# sourceMappingURL=welcome.component.js.map
+], ProductDetailComponent);
+exports.ProductDetailComponent = ProductDetailComponent;
+//# sourceMappingURL=product-detail.component.js.map
