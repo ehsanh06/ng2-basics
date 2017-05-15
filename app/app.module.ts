@@ -20,7 +20,8 @@ import {
     JQ_TOKEN, 
     TOASTR_TOKEN, 
     Toastr, 
-    CollapsibleWellComponent
+    CollapsibleWellComponent,
+    SimpleModalComponent
 } from './common/index'
 
 import { EventsAppComponent } from './events-app.component'
@@ -50,7 +51,8 @@ declare let jQuery: Object;
         CreateSessionComponent,
         SessionListComponent,
         CollapsibleWellComponent,
-        DurationPipe
+        DurationPipe,
+        SimpleModalComponent
     ],
     providers: [
         EventService, 
@@ -64,6 +66,10 @@ declare let jQuery: Object;
         {
             provide: TOASTR_TOKEN,
             useValue: toastr
+        },
+        {
+            provide: JQ_TOKEN,
+            useValue: jQuery
         }
 
     ],
