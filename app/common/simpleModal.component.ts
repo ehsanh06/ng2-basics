@@ -12,7 +12,7 @@ import { Component, Input } from '@angular/core'
                         </button>
                         <h4 class="modal-title">{{title}}</h4>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal.body">
                         <ng-content></ng-content>
                     </div>
                 </div>
@@ -20,7 +20,7 @@ import { Component, Input } from '@angular/core'
         </div>
     `,
     styles: [`
-        .modal-body { 
+        .modal.body { 
             height: 250px; 
             overflow-y: scroll;
         }
