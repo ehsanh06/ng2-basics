@@ -21,14 +21,18 @@ export class EventDetailsComponent implements OnInit {
     constructor(private eventService: EventService, private route: ActivatedRoute) {
 
     }
+
     ngOnInit() {
         this.route.params.forEach((params: Params) => {
             this.event = this.eventService.getEvent(+params['id'])
+            this.addMode = false;
         })
     }
+
     addSession() {
         this.addMode = true
     }
+    
     saveNewSession(session: ISession) {
         const nextId = Math.max.apply(null, this.event.sessions.map(s => s.id));
         session.id = nextId + 1
