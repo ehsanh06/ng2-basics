@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
     private firstName: FormControl
     private lastName: FormControl
 
-    constructor(private authService: AuthService, private router: Router, @Inject (TOASTR_TOKEN) private toastr: Toastr) {
+    constructor(private authService: AuthService, private router: Router, @Inject(TOASTR_TOKEN) private toastr: Toastr) {
 
     }
 
@@ -42,10 +42,18 @@ export class ProfileComponent implements OnInit {
     saveProfile(formValues) {
         if (this.profileForm.valid) {
             this.authService.updatedCurrentUser(formValues.firstName, formValues.lastName)
-            this.toastr.success('Profile Saved');
+                .subscribe(() => {
+                    this.toastr.success('Profile Saved');
+                })
         }
     }
 
+    logout() {
+        this.authService.logout()
+            .subscribe(() => {
+                this.router.navigate(['/user/login'])
+            })
+    }
     validateLastName() {
         return this.lastName.valid || this.lastName.touched
     }
